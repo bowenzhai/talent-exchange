@@ -7,7 +7,7 @@ $(document).ready(function(){
 
   var i;
   for(i = 0; i < 10;i++){
-  addResult("Bob Smith", "Music", "Piano","I was taught be beethoven, therefore I am amazing at piano");}
+  addResult("Bob Smith", "Music", "Piano","I was taught by Beethoven, therefore I am amazing at piano.");}
   });
 
 function addResult(name,category,subject,desc){
@@ -16,7 +16,7 @@ function addResult(name,category,subject,desc){
 		<img src="./images/images.jpg">\
 		<h3 class="name">'+name+'</h3>\
 		<br><p class="category">\
-		<b>'+category+': </b></p>\
+		<b>'+category+' </b>></p>\
 		<p class="subject"	>'+subject+'</p><br>\
 		<p class="description">'+desc+'</p>\
 		<div class="rating">\
