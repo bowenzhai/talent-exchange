@@ -4,7 +4,26 @@ $(document).ready(function(){
 	autoplay: true,
 	autoplaySpeed: 5000
   });
-});
+
+  var i;
+  for(i = 0; i < 10;i++){
+  addResult("Bob Smith", "Music", "Piano","I was taught be beethoven, therefore I am amazing at piano");}
+  });
+
+function addResult(name,category,subject,desc){
+	$(".results-list").append($('\
+		<li>\
+		<img src="./images/images.jpg">\
+		<h3 class="name">'+name+'</h3>\
+		<br><p class="category">\
+		<b>'+category+': </b></p>\
+		<p class="subject"	>'+subject+'</p><br>\
+		<p class="description">'+desc+'</p>\
+		<div class="rating">\
+		</div><button type="button">Contact</button>\
+		<button type="button">Find out more</button>\
+		</li>'));
+}
 
 var loginBtn = document.getElementsByTagName("nav")[0].children[3];
 var loginWindow =  document.getElementById("login_Window");3
