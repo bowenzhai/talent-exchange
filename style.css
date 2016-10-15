@@ -85,6 +85,11 @@ nav {
 	padding-top: 10px;
 }
 
+.logo {
+	width: 50px;
+	margin-left: 10px;
+}
+
 nav > * {
 	display: inline-block;
 }
