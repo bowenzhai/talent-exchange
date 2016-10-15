@@ -119,6 +119,11 @@ nav a {
 	list-style-type: none;
 }
 
+.results-list li {
+	padding: 10px;
+	background-color: #cccccc;
+}
+
 .results-list li *{
 	display: inline;
 }
@@ -129,4 +134,52 @@ nav a {
 	width: auto;
 }
 
+.banner-static {
+	margin-top: 50px;
+	
+}
 
+.banner-static img {
+	width: 100%;
+	height: auto;
+}
+
+.banner-static i {
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	color: white;
+	z-index: 1;
+	font-size: 2em;
+}
+
+.profile {
+	position: absolute;
+	left: 50px;
+	top: -90px;
+}
+
+.profile img {
+	border-radius: 50%;
+	width: 200%;
+}
+
+.info {
+	position: relative;
+	padding: 0;
+}
+
+.info > * {
+	display: inline-block;
+}
+
+.left {
+	padding: 100px 0 0 20px;
+	width: 35%;
+	background-color: #cccccc;
+}
+
+.right {
+	width: 60%;
+	padding: 50px 20px 0 0;
+}
