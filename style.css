@@ -111,11 +111,22 @@ nav a {
 	height: auto!important;
 }
 
-#trending {
-	
+#filter form *{
+	display: inline;
 }
 
-.graph1, .graph2 {
-	width: 49%;
-	display: inline-block;
+.results-list {
+	list-style-type: none;
 }
+
+.results-list li *{
+	display: inline;
+}
+
+.results-list img {
+	float: left;
+	height: 40px;
+	width: auto;
+}
+
+
