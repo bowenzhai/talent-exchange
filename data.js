@@ -1,5 +1,5 @@
 // DataItem constructor
-function DataItem (id,category,title,description,providerID,point,rating,timestamp){
+function DataItem (id,category,title,description,providerID,point,rating,timestamp,location){
 	this.id = id;
 	this.category = category;
 	this.title = title;
@@ -8,6 +8,7 @@ function DataItem (id,category,title,description,providerID,point,rating,timesta
 	this.point = point;
 	this.rating = rating;
 	this.timestamp = timestamp;
+	this.location = location;
 }
 
 // provider constructor
@@ -31,14 +32,14 @@ new Provider(5, "Bob Smith", 3, "I like Pianos", "./images/man4.jpg")
 
 // list of data, add more fields if you want
 var data = [
-new DataItem(0,"Sports","Skating","Come and learn some awesome skating skills from Raymond!", 0,50, 8, new Date("October 15, 2016 23:59:12")),
-new DataItem(1, "Arts", "Comic drawing", "Interested in drawing some comics? Learn today!",1, 20,9, new Date("October 13, 2016 11:13:24")),
-new DataItem(2, "Life skills", "Fishing","Feed yourself with some fresh fish. Extra fees apply for fishing equipment.", 2, 40,8, new Date("October 13, 2016 02:47:08")),
-new DataItem(3, "Life skills", "Gardening","Flowers can light up your day!" , 2, 40,7, new Date("October 6, 2016 20:46:39")),
-new DataItem(4, "Sports", "Swimming","Secure your life against floods!", 0, 20,5, new Date("October 1, 2016 06:01:25")),
-new DataItem(5, "Language", "French","Classic French, fancy to know.", 3, 80,6, new Date("September 29, 2016 17:54:00")),
-new DataItem(6, "Sports", "Soccer","I am a long-time soccer enthusiast who played in the Western University Varsity.", 4, 40,6, new Date("September 28, 2016 00:01:59")),
-new DataItem(7, "Music", "Piano","I was taught by Beethoven, therefore I am amazing at piano.", 5, 10,3, new Date("September 03, 2016 14:23:33")),
+new DataItem(0,"Sports","Skating","Come and learn some awesome skating skills from Raymond!", 0,50, 8, new Date("October 15, 2016 23:59:12"), {lat: 43.01, lng: -81.26}),
+new DataItem(1, "Arts", "Comic drawing", "Interested in drawing some comics? Learn today!",1, 20,9, new Date("October 13, 2016 11:13:24"), {lat: 43.010518, lng: -81.273304}),
+new DataItem(2, "Life skills", "Fishing","Feed yourself with some fresh fish. Extra fees apply for fishing equipment.", 2, 40,8, new Date("October 13, 2016 02:47:08"),{lat:43.012950, lng:-81.274656}),
+new DataItem(3, "Life skills", "Gardening","Flowers can light up your day!" , 2, 40,7, new Date("October 6, 2016 20:46:39"),{lat: 43.011407, lng: -81.279235} ),
+new DataItem(4, "Sports", "Swimming","Secure your life against floods!", 0, 20,5, new Date("October 1, 2016 06:01:25"),{lat: 43.012741, lng: -81.279042}),
+new DataItem(5, "Language", "French","Classic French, fancy to know.", 3, 80,6, new Date("September 29, 2016 17:54:00"),{lat: 43.014396, lng: -81.280877}),
+new DataItem(6, "Sports", "Soccer","I am a long-time soccer enthusiast who played in the Western University Varsity.", 4, 40,6, new Date("September 28, 2016 00:01:59"), {lat: 43.014929, lng: -81.283516}),
+new DataItem(7, "Music", "Piano","I was taught by Beethoven, therefore I am amazing at piano.", 5, 10,3, new Date("September 03, 2016 14:23:33"),{lat: 43.015231, lng: -81.280717}),
 ];
 
 

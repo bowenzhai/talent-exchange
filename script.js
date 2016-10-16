@@ -21,7 +21,7 @@ loginBtn.onclick = function(event) {
 
 $('#applyFilter').submit(function(event){
 event.preventDefault();
-var template = _.template("<div class='course-wrapper'> <img src= '<%= findProviderByID(targetObj.providerID).imgURL %>'/> <h3 class='name'><%= targetObj.title %> </h3> <div class='info-wrapper'> <p> Provider Name: <b><%= findProviderByID(targetObj.providerID).name %></b> </p> <p>Rating: <b><%= targetObj.rating %> / 10</b></p> <p>Points Per Session: <b><%= targetObj.point %></b> </p> <button type='button'>Contact Provider</button> <button type='button'>Request Course</button> </div>");
+var template = _.template("<div class='course-wrapper'> <img src= '<%= findProviderByID(targetObj.providerID).imgURL %>'/> <h3 class='name'><%= targetObj.title %> </h3> <div class='info-wrapper'> <p> Provider Name: <b><%= findProviderByID(targetObj.providerID).name %></b> </p> <p>Rating: <b><%= targetObj.rating %> / 10</b></p> <p>Points Per Session: <b><%= targetObj.point %></b> </p> <button type='button'>Contact Provider</button> <button type='button' ><a href='./soccer-post.html'>Request Course</a></button> </div>");
 var form = $('#applyFilter');
 $(".results-list").html('');
 $("#waitForLoad").removeClass("divHidden");
@@ -88,3 +88,49 @@ function filterSortArr(searchTxt, categories, sort, arr)
 	}
 	return result;
 }
+
+
+function initMap() {
+        var myLatLng = {lat: 43.010052, lng: -81.273648};
+
+        // Create a map object and specify the DOM element for display.
+        var map = new google.maps.Map(document.getElementById('talentsNearBy'), {
+          center: myLatLng,
+          scrollwheel: false,
+          zoom: 15
+        });
+
+         var contentString = '<div id="content">'+
+      '<p>Your Location</p></div>';
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+          map: map,
+          position: myLatLng,
+          title: 'Your location'
+        });
+
+        marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+        var template = "<div class='location'><p><%= findProviderByID(targetObj.providerID).name %>'s offering: <b><%= targetObj.title %></b>. </p><p><%= targetObj.description %></p><button>Learn More</button></div>";
+        var templateFunc = _.template(template);
+        data.forEach(function(elem, idx, arr){
+        	var newMarker = new google.maps.Marker({
+        		map: map,
+        		position: elem.location,
+        		title: 'talent',
+        		icon: 'images/rsz_marker.png'
+        	});
+        	var infowindow = new google.maps.InfoWindow({
+    content: templateFunc({targetObj: elem})
+  });
+        	newMarker.addListener('click',function(){
+        		infowindow.open(map, newMarker);
+        	});
+        });
+        }
