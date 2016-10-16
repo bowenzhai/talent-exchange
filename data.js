@@ -48,13 +48,3 @@ function findProviderByID(id){
 	var result = providers.find(function(prov){return prov.id == id;});
 	return result;
 }
-
-$(document).ready(function(){
-	// template string
-  var template = "<div class='course-wrapper'> <img src= '<%= findProviderByID(targetObj.providerID).imgURL %>' width='50px' height='50px'/> <h3><%= targetObj.title %> </h3> <div class='info-wrapper'> <p> Provider Name: <b><%= findProviderByID(targetObj.providerID).name %></b> </p> <p>Rating: <b><%= targetObj.rating %> / 10</b></p> <p>Points Per Session: <b><%= targetObj.point %></b> </p> <button type='button'>Contact Provider</button> <button type='button'>Request Course</button> </div>";
-  data.forEach(function(item, index) // data is an array of DataItem
-  {
-  	var tmp = $(_.template(template,{targetObj: item})); // create a new element, plug in data of each "item"
-  	tmp.appendTo("body"); // or any other div you want, appendTo(#divID), the div will be appended to the end
-  });
-});

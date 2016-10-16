@@ -37,27 +37,30 @@
 			<div><img src="./images/youth.jpg"></div>
 		</div>
 		<section id="filter">
-			<form>
-				<input name='search' type='text' placeholder='Search...' />
+			<form id="applyFilter">
+				<input name='search' id='search' type='text' placeholder='Search...' />
 				<h3>Category:</h3>
-				<select name="categories">
+				<select name="categories" id='categories'>
 					<option value="-">-</option>
-					<option value="Sports">Sports</option>
-					<option value="Sports">Arts</option>
-					<option value="Sports">Language</option>
-					<option value="Sports">Music</option>
+					<option>Sports</option>
+					<option>Arts</option>
+					<option>Language</option>
+					<option>Music</option>
+					<option>Life Skills</option>
 				</select>
 				<h3>Sort by:</h3>
-				<select name="sort">
+				<select name="sort" id='sort'>
 					<option value="None">None</option>
 					<option value="Time">Time</option>
 					<option value="Rating">Rating</option>
 				</select>
-				<input type='button' value="Submit" />
+				<input type='submit' value="submit" />
 			</form>
 		</section>
 		<section id="result">
-			<p>Apply filters to display results...</p>
+		<div id="waitForLoad" class="divHidden">
+			<p><img width="20px" height="20px" src="./images/loader7.gif" />Apply filters to display results...</p>
+		</div>
 			<ul class="results-list">
 				<li><div class="profile-field"><img src="./images/images.jpg"></div><h3 class="name-field">John Doe</h3><br><p class="category-field"><b>Sports</b> > </p><p class="subject-field">Soccer</p><br>
 				<p class="description-field">I am a long-time soccer enthusiast who played in the Western University Varsity</p>
@@ -67,6 +70,8 @@
 		<footer>@2016 Talents Inc.</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 		<script type="text/javascript" src="slick/slick.min.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script>
+		<script src="data.js"></script>
 		<script src="script.js"></script>
 	</body>
 <html>
