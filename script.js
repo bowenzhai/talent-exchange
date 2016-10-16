@@ -5,24 +5,17 @@ $(document).ready(function(){
 	autoplaySpeed: 5000
   });
 
-/**
-  var i;
-  for(i = 0; i < 10;i++){
-  addResult("Bob Smith", "Music", "Piano","I was taught by Beethoven, therefore I am amazing at piano.");
-  }
-  */
 
 var loginBtn = document.getElementsByTagName("nav")[0].children[3];
 var loginWindow =  document.getElementById("login_Window");
 var bg = document.getElementsByClassName("transparent-bg")[0];
 
-loginBtn.onclick = function() {
-	/*loginWindow.style.display = "block";
-	loginWindow.style.opacity = "1";*/
-	//$('#login_Window').animate({opacity: 1},100);
+loginBtn.onclick = function(event) {
 	bg.style.display = "block";
 	bg.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
 	bg.style.opacity = "1";
+	event.preventDefault();
+	return false;
 };
 
 $('#applyFilter').submit(function(event){
@@ -53,22 +46,7 @@ return false;
 
 });
 
-/**
-function addResult(name,category,subject,desc){
-	$(".results-list").append($('\
-		<li>\
-		<img src="./images/images.jpg">\
-		<h3 class="name">'+name+'</h3>\
-		<br><p class="category">\
-		<b>'+category+' </b>></p>\
-		<p class="subject"	>'+subject+'</p><br>\
-		<p class="description">'+desc+'</p>\
-		<div class="rating">\
-		</div><button type="button">Contact</button>\
-		<button type="button">Find out more</button>\
-		</li>'));
-}
-*/
+
 var template = "<div class='course-wrapper'> <img src= '<%= findProviderByID(targetObj.providerID).imgURL %>' width='50px' height='50px'/> <h3><%= targetObj.title %> </h3> <div class='info-wrapper'> <p> Provider Name: <b><%= findProviderByID(targetObj.providerID).name %></b> </p> <p>Rating: <b><%= targetObj.rating %> / 10</b></p> <p>Points Per Session: <b><%= targetObj.point %></b> </p> <button type='button'>Contact Provider</button> <button type='button'>Request Course</button> </div>";
 
 function filterSortArr(searchTxt, categories, sort, arr)
