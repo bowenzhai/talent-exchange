@@ -56,7 +56,7 @@ a {
 
 }
 
-#login_Window input[type="text"]{
+#login_Window input[type="text"],#login_Window input[type="password"]{
 	display: block;
 	width: 300px;
 	margin-left: auto;
@@ -155,6 +155,10 @@ nav a {
 	margin-bottom: 5px;
 }
 
+.course-wrapper{
+	position: relative;
+}
+
 .results-list li *{
 	display: inline;
 }
@@ -163,6 +167,7 @@ nav a {
 	float: left;
 	height: 40px;
 	width: auto;
+	margin-right: 30px;
 }
 
 .banner-static {
@@ -264,3 +269,22 @@ footer {
         padding-left: 5px;
         padding-right: 5px;
       }
+
+.info-wrapper p{
+	display: inline;
+	margin-right: 30px;
+}
+
+.info-wrapper{
+	clear: both;
+}
+
+.info-wrapper button{
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.course-wrapper h3{
+	position: absolute;
+	left: 100px;
+}

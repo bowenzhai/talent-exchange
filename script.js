@@ -21,7 +21,7 @@ loginBtn.onclick = function(event) {
 
 $('#applyFilter').submit(function(event){
 event.preventDefault();
-var template = _.template("<div class='course-wrapper'> <img src= '<%= findProviderByID(targetObj.providerID).imgURL %>'/> <h3 class='name'><%= targetObj.title %> </h3> <div class='info-wrapper'> <p> Provider Name: <b><%= findProviderByID(targetObj.providerID).name %></b> </p> <p>Rating: <b><%= targetObj.rating %> / 10</b></p> <p>Points Per Session: <b><%= targetObj.point %></b> </p> <button type='button'>Contact Provider</button> <button type='button' ><a href='./soccer-post.html'>Request Course</a></button> </div>");
+var template = _.template("<div class='course-wrapper'><img src= '<%= findProviderByID(targetObj.providerID).imgURL %>'/>   <h3 class='name'><%= targetObj.title %> </h3><div class='info-wrapper'><br> <p> Provider Name: <b><%= findProviderByID(targetObj.providerID).name %></b> </p> <p>Rating: <b><%= targetObj.rating %> / 10</b></p> <p>Points Per Session: <b><%= targetObj.point %></b> </p><p>Last updated: <b><%= targetObj.timestamp.getFullYear() + '/' + targetObj.timestamp.getMonth() + '/' +targetObj.timestamp.getDate() %></b> </p><br><br><p>Description: <b><%= targetObj.description %></b></p><br> <button type='button'>Contact Provider</button> <button type='button' ><a href='./soccer-post.html'>Request Course</a></button> </div>");
 var form = $('#applyFilter');
 $(".results-list").html('');
 $("#waitForLoad").removeClass("divHidden");
