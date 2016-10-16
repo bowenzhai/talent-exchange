@@ -6,6 +6,7 @@ $(document).ready(function(){
   });
 
 
+
 var loginBtn = document.getElementsByTagName("nav")[0].children[3];
 var loginWindow =  document.getElementById("login_Window");
 var bg = document.getElementsByClassName("transparent-bg")[0];
@@ -46,7 +47,16 @@ return false;
 
 });
 
-
+function login() {
+	document.getElementsByClassName('transparent-bg')[0].style.display='none';
+	var nav = document.getElementsByTagName('nav')[0];
+	nav.removeChild(nav.children[4]);
+	nav.removeChild(nav.children[3]);
+	var profileLink = document.createElement("a");
+	profileLink.href = "profile.html";
+	profileLink.innerHTML = "Bowen Zhai";
+	nav.appendChild(profileLink);
+}
 var template = "<div class='course-wrapper'> <img src= '<%= findProviderByID(targetObj.providerID).imgURL %>' width='50px' height='50px'/> <h3><%= targetObj.title %> </h3> <div class='info-wrapper'> <p> Provider Name: <b><%= findProviderByID(targetObj.providerID).name %></b> </p> <p>Rating: <b><%= targetObj.rating %> / 10</b></p> <p>Points Per Session: <b><%= targetObj.point %></b> </p> <button type='button' onclick='function(){window.location = \"soccer-post.html\";}'>Contact Provider</button> <button type='button'>Request Course</button> </div>";
 
 function filterSortArr(searchTxt, categories, sort, arr)
